@@ -15,7 +15,7 @@ $dp = Array.new($n + 1) { Array.new($W + 1, 0) }
     candidates = [$dp[y - 1][x]]
     candidates << $v[y - 1] if w <= x
     diff_w = x - w
-    candidates << ($dp[y - 1][diff_w] + $v[y - 1]) if 0 < diff_w
+    candidates << ($dp[y][diff_w] + $v[y - 1]) if 0 < diff_w
     $dp[y][x] = candidates.max
   end
 end
